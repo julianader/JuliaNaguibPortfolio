@@ -1,5 +1,6 @@
 {
-  "name": "portfonext",
+  "homepage": "https://julianader.github.io/JuliaNaguibPortfolio",
+  "name": "julianaguibportfolio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
