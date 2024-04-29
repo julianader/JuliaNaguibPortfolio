@@ -1,0 +1,108 @@
+@import '@/styles/animations.scss';
+@import '@/styles/mixins.scss';
+@import '@/styles/globals.scss';
+
+.container {
+  @include flex-row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+
+  .intro {
+    @include flex-column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 0 auto;
+    width: 900px;
+
+    .animatedtext {
+      @include flex-row;
+
+      .text {
+        @include gradient-text-loop;
+        width: fit-content;
+        font-size: $font-size-10xl;
+        font-weight: $font-weight-black;
+        text-transform: uppercase;
+        animation: gradient-animation 8s linear infinite;
+      }
+
+      .caret {
+        color: var(--blue-color);
+        font-size: $font-size-10xl;
+        transform: scaleX(0.4);
+        animation: visibility-animation 1s step-end infinite;
+      }
+    }
+
+    .description {
+      display: inline-block;
+      color: var(--font-color-primary);
+      white-space: pre-wrap; 
+      font-size: $font-size-em;
+      font-weight: $font-weight-bold;
+      margin-bottom: 8px;
+      
+    }
+
+    .links {
+      @include flex-row;
+
+      .link {
+        margin-top: 15px;
+        margin-right: 15px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    align-items: flex-center;
+    // padding-top: 80px;
+
+    .intro {
+      width: 100%;
+
+      .animatedtext {
+        .text {
+          font-size: $font-size-6xl;
+        }
+
+        .caret {
+          font-size: $font-size-6xl;
+          transform: scaleX(0.6);
+        }
+      }
+
+      .description {
+        width: 100%;
+        white-space: pre-wrap; 
+        font-weight: $font-weight-medium;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    .intro {
+      .buttons {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+
+        .buttoncontainer {
+          margin-right: 0;
+          flex-basis: 48%;
+
+          .button {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

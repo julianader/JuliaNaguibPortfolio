@@ -1,0 +1,86 @@
+@import '@/styles/animations.scss';
+@import '@/styles/mixins.scss';
+@import '@/styles/globals.scss';
+
+.container {
+  @include flex-column;
+  position: relative;
+  width: 100%;
+
+  .skillcontainer {
+    @include flex-row;
+    width: 100%;
+    flex-wrap: wrap;
+
+    .skill {
+      @include flex-column;
+
+      .data {
+        @include flex-row;
+        align-items: center;
+        width: 100%;
+
+        .image {
+          width: $font-size-3xl;
+          height: $font-size-3xl;
+          object-fit: contain;
+          object-position: center;
+          margin-right: 15px;
+          border-radius: 5px;
+        }
+
+        .logo {
+          font-size: $font-size-2xl;
+          margin-right: 15px;
+          color: var(--blue-color);
+        }
+
+        .name {
+          @include overflow-ellipsis;
+          width: 100%;
+          margin-right: 15px;
+          color: var(--font-color-primary);
+          font-weight: $font-weight-medium;
+          font-size: $font-size-m;
+        }
+
+        .icon {
+          color: var(--blue-color);
+          font-size: $font-size-2xl;
+        }
+      }
+
+      .barcontainer {
+        @include flex-row;
+        align-items: center;
+        margin-top: 20px;
+
+        .percent {
+          width: 40px;
+          margin-right: 8px;
+          color: var(--font-color-primary);
+          font-weight: $font-weight-semibold;
+          font-size: $font-size-s;
+        }
+
+        .bar {
+          $height: 8px;
+          position: relative;
+          width: 100%;
+          height: $height;
+          border-radius: calc($height / 2);
+          background-color: var(--transparent-background);
+
+          .fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: $height;
+            border-radius: calc($height / 2);
+            background-color: var(--font-color-secondary);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,150 @@
+@import '@/styles/animations.scss';
+@import '@/styles/mixins.scss';
+@import '@/styles/globals.scss';
+
+.container {
+  @include flex-column;
+  position: relative;
+  width: 100%;
+
+  .splitimage {
+    @include flex-column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-right: 30px;
+    max-width: 200px;
+    min-width: 170px;
+
+    .image {
+      @include background-contain;
+      width: 100%;
+      height: auto;
+      border-radius: 100%;
+    }
+  }
+
+  .splittext {
+    @include flex-column;
+    flex: 1;
+    min-width: 300px;
+    padding-top: 10px;
+
+    .description {
+      width: 100%;
+      color: var(--font-color-secondary);
+      font-size: $font-size-em;
+      font-weight: $font-weight-medium;
+      line-height: $font-size-2xl;
+
+      .bold {
+        font-weight: $font-weight-semibold;
+        color: var(--font-color-primary);
+      }
+
+      .accent {
+        @include gradient-text-normal;
+        color:red;
+        font-weight: $font-weight-black;
+        display: inline-block;
+      }
+
+      .break {
+        margin-bottom: 8px;
+      }
+    }
+  }
+
+  .extratext {
+    width: 100%;
+    margin-top: 8px;
+    color: var(--font-color-secondary);
+    font-size: $font-size-em;
+    font-weight: $font-weight-medium;
+    line-height: $font-size-2xl;
+
+    .bold {
+      font-weight: $font-weight-semibold;
+      color: var(--font-color-primary);
+    }
+
+    .accent {
+      @include gradient-text-accent;
+      font-weight: $font-weight-black;
+      display: inline-block;
+    }
+
+    .break {
+      margin-bottom: 8px;
+    }
+  }
+
+  .links {
+    width: 100%; /* Set the width to 100% to expand based on parent container */
+
+    /* Flexbox styles to allow links to wrap and adjust width based on content */
+    display: flex;
+    margin-top: 40px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .link {
+      margin-right: 15px;
+      margin-bottom: 20px;
+      max-width: 100%; /* Set maximum width to 100% initially */
+      width: auto; /* Allow links to take the width of their content */
+
+      /* Additional styles if needed */
+      white-space: nowrap; /* Prevent link text from wrapping */
+    }
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .container {
+    .splittext {
+      padding-top: 0;
+    }
+
+    .splitimage {
+      max-width: 230px;
+      min-width: 200px;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    .splitimage {
+      margin-right: 0;
+      max-width: unset;
+      width: 100%;
+      margin-bottom: 30px;
+    }
+
+    .extratext {
+      margin-top: 0;
+    }
+
+    .links {
+      justify-content: space-between;
+
+      .link {
+        margin-right: 0;
+        width: 48%;
+        max-width: unset;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    .links {
+      .link {
+        width: 100%;
+        margin-right: 0;
+      }
+    }
+  }
+}
