@@ -8,12 +8,12 @@ export default function Images() {
   return (
     <>
       <ImageLoadingTracker
-        // quality={85}
-        // placeholder="empty"
-        // src={hollowplanets}
+        quality={85}
+        placeholder="empty"
+        src={hollowplanets}
         alt="Hollow Planets"
-        // className={styles.hollowplanets}
-        // priority
+        className={styles.hollowplanets}
+        priority
       />
       {/* <ImageLoadingTracker src={planet2} alt="Big Planet" className={styles.bigplanet} priority />
       <ImageLoadingTracker
